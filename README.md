@@ -19,3 +19,4 @@ las versiones las puede ver en el archivo graddle
 
 
 ![app](https://raw.githubusercontent.com/carlosjgr7/themovieapp/main/assetsGit/imgcarrusel.jpeg)
+![app](https://raw.githubusercontent.com/carlosjgr7/themovieapp/main/assetsGit/imgdescription.jpeg)
