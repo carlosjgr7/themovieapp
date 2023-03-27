@@ -1,5 +1,5 @@
 # THEMOVIEAPP
-simulación de una App de películas. Hace peticiones a la api publica de https://www.themoviedb.org y consume los endpoints de 
+App de películas realizada usando el patron MVVM y CleanArquitecture. Hace peticiones a la api publica de https://www.themoviedb.org para consumir los ecdpoints:
 
 - TopReated
 - Popular
@@ -14,6 +14,8 @@ simulación de una App de películas. Hace peticiones a la api publica de https:
 - Retrofit
 - Dagger Hilt
 - Glade
+
+las versiones las puede ver en el archivo graddle
 
 
 
