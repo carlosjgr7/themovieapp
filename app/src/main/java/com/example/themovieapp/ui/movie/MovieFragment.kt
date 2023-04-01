@@ -35,11 +35,11 @@ class MovieFragment : Fragment(R.layout.fragment_movie), onMovieClickListener {
         concatAdapter = ConcatAdapter()
 
 
-        viewModel.fetchUpcomingMovies().observe(viewLifecycleOwner, Observer {
+        viewModel.fetchMovies().observe(viewLifecycleOwner, Observer {
             when (it) {
                 is ResourceMovies.Failure -> {
                     binding.progressBar.visibility = View.GONE
-                    Log.d("livedata", "${it.exception}")
+                    Log.d("livedata", it.exception)
                 }
                 is ResourceMovies.Loading -> binding.progressBar.visibility = View.VISIBLE
                 is ResourceMovies.Success -> {

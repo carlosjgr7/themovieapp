@@ -18,7 +18,7 @@ class MovieViewModel @Inject constructor(
     private val getTopRatingMoviesUsesCase: GetTopRatingMoviesUsesCase
 ) : ViewModel() {
 
-    fun fetchUpcomingMovies()= liveData(viewModelScope.coroutineContext + Dispatchers.Main){
+    fun fetchMovies() = liveData(viewModelScope.coroutineContext + Dispatchers.Main){
         emit(ResourceMovies.Loading())
         try {
             emit(ResourceMovies.Success(Triple(getUpComingMoviesUsesCase(),getPopularMoviesUsesCase(),getTopRatingMoviesUsesCase())))

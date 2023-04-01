@@ -6,7 +6,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class MovieDataSource @Inject constructor(private val IWebServiceMovie: IWebServiceMovie) {
+class MovieRemoteDataSource @Inject constructor(private val IWebServiceMovie: IWebServiceMovie) {
 
     suspend fun getUpcomingMovies(): Movies {
         return withContext(Dispatchers.IO) {
