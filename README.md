@@ -14,6 +14,7 @@ App de películas realizada usando el patron MVVM y CleanArquitecture. Hace peti
 - Retrofit
 - Dagger Hilt
 - Glade
+- Room
 
 las versiones las puede ver en el archivo graddle
 
