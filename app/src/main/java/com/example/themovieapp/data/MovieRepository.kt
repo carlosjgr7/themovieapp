@@ -16,11 +16,10 @@ import javax.inject.Inject
 class MovieRepository @Inject constructor(
     private val remoteDataSource: MovieRemoteDataSource,
     private val localDataSource: MovieLocalDataSource,
-    private val context: Context
 ) {
 
     suspend fun getUpComingMovies(): Movies {
-       if(WebUses.isConnected(context)) {
+       if(WebUses.isConnected()) {
             remoteDataSource.getUpcomingMovies().results.forEach {
                 it.toMovieEntity(MovieType.UpCommingMovie.name).let { movieEntity ->
                     saveLocalMovie(movieEntity)
@@ -32,7 +31,7 @@ class MovieRepository @Inject constructor(
     }
 
     suspend fun getTopRatingMovies(): Movies {
-        if(WebUses.isConnected(context)) {
+        if(WebUses.isConnected()) {
             remoteDataSource.getTopRatingMovies().results.forEach {
                 it.toMovieEntity(MovieType.TopRatingMovie.name).let { movieEntity ->
                     saveLocalMovie(movieEntity)
@@ -43,7 +42,7 @@ class MovieRepository @Inject constructor(
     }
 
     suspend fun getPopularMovies(): Movies {
-        if(WebUses.isConnected(context)) {
+        if(WebUses.isConnected()) {
             remoteDataSource.getPopularMovies().results.forEach {
                 it.toMovieEntity(MovieType.PopularMovie.name).let { movieEntity ->
                     saveLocalMovie(movieEntity)
@@ -53,7 +52,7 @@ class MovieRepository @Inject constructor(
         return localDataSource.getPopularMovies()
     }
 
-    suspend fun saveLocalMovie(movie: MovieEntity) {
+    private suspend fun saveLocalMovie(movie: MovieEntity) {
         localDataSource.saveMovieEntity(movie)
     }
 
